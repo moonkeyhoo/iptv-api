@@ -39,4 +39,7 @@ https://www.254950134.xyz/final_streams.txt
 https://gitee.com/hbo2/iptv/raw/master/001.txt
 https://gitee.com/dundunba/iptv/raw/master/aktv2.m3u
 https://gitee.com/dundunba/iptv/raw/master/ipv63.m3u
+https://raw.githubusercontent.com/vbskycn/iptv/refs/heads/master/tv/iptv4.txt
+https://raw.githubusercontent.com/vbskycn/iptv/refs/heads/master/tv/iptv6.txt
+https://raw.githubusercontent.com/vbskycn/iptv/refs/heads/master/tv/hd.txt
 
