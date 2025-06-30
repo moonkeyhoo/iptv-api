@@ -1,17 +1,16 @@
 # 这是订阅源列表，每行一个订阅地址
 # This is a list of subscription sources, with one subscription address per line
 https://freetv.fun/test_channels.txt
-https://gh.qninq.cn/https://raw.githubusercontent.com/YueChan/Live/refs/heads/main/Hunan.m3u
-https://gh.qninq.cn/https://raw.githubusercontent.com/YueChan/Live/refs/heads/main/Hunan.txt
-https://gh.qninq.cn/https://raw.githubusercontent.com/YueChan/Live/refs/heads/main/TEST.m3u
+https://gh.qninq.cn/https://raw.github.com/YueChan/Live/refs/heads/main/Hunan.m3u
+https://gh.qninq.cn/https://raw.github.com/YueChan/Live/refs/heads/main/Hunan.txt
+https://gh.qninq.cn/https://raw.github.com/YueChan/Live/refs/heads/main/TEST.m3u
 https://raw.bgithub.xyz/wwb521/live/refs/heads/main/tv.txt
-https://gh.qninq.cn/https://raw.githubusercontent.com/iptv-org/iptv/refs/heads/master/streams/cn.m3u
+https://gh.qninq.cn/https://raw.github.com/iptv-org/iptv/refs/heads/master/streams/cn.m3u
 https://live.izbds.com/tv/iptv4.txt
 https://live.izbds.com/tv/iptv6.txt
-https://gh.qninq.cn/https://raw.githubusercontent.com/Free-TV/IPTV/refs/heads/master/playlists/playlist_china.m3u8
-
-https://gh.qninq.cn/https://raw.githubusercontent.com/kimwang1978/collect-tv-txt/refs/heads/main/bbxx_lite.txt
-https://gh.qninq.cn/https://raw.githubusercontent.com/Jeremy-2024/OKTV/refs/heads/main/live/YouTube.txt
+https://gh.qninq.cn/https://raw.github.com/Free-TV/IPTV/refs/heads/master/playlists/playlist_china.m3u8
+https://gh.qninq.cn/https://raw.github.com/kimwang1978/collect-tv-txt/refs/heads/main/bbxx_lite.txt
+https://gh.qninq.cn/https://raw.github.com/Jeremy-2024/OKTV/refs/heads/main/live/YouTube.txt
 https://gitee.com/dundunba/iptv/raw/master/ipv67.m3u
 https://gitee.com/dundunba/iptv/raw/master/ipv6.m3u
 https://gh.qninq.cn/https://raw.github.com/jk2024988/TV2024/refs/heads/main/bj.m3u
