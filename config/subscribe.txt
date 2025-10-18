@@ -1,8 +1,5 @@
 # 这是订阅源列表，每行一个订阅地址
 # This is a list of subscription sources, with one subscription address per line
-
-# 这是订阅源列表，每行一个订阅地址
-# This is a list of subscription sources, with one subscription address per line
 # 默认节目订阅源
 https://www.mpimg.cn/down.php/f9c94088c3916dd46978c3e4c8b741f8.txt
 https://raw.githubusercontent.com/Guovin/iptv-database/master/result.txt
