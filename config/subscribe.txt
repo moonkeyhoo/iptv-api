@@ -1,9 +1,65 @@
 # 这是订阅源列表，每行一个订阅地址
 # This is a list of subscription sources, with one subscription address per line
 
+# 这是订阅源列表，每行一个订阅地址
+# This is a list of subscription sources, with one subscription address per line
+# 默认节目订阅源
+https://www.mpimg.cn/down.php/f9c94088c3916dd46978c3e4c8b741f8.txt
 https://raw.githubusercontent.com/Guovin/iptv-database/master/result.txt
 https://raw.githubusercontent.com/iptv-org/iptv/gh-pages/countries/cn.m3u
 https://raw.githubusercontent.com/iptv-org/iptv/master/streams/cn.m3u
-https://raw.githubusercontent.com/suxuang/myIPTV/main/ipv4.m3u
-https://raw.githubusercontent.com/kimwang1978/collect-tv-txt/main/others_output.txt
+https://raw.githubusercontent.com/suxuang/myIPTV/main/ipv6.m3u
+https://raw.githubusercontent.com/kimwang1978/collect-tv-txt/main/merged_output.txt
+https://raw.githubusercontent.com/asdjkl6/tv/tv/.m3u/整套直播源/测试/整套直播源/l.txt
+https://raw.githubusercontent.com/asdjkl6/tv/tv/.m3u/整套直播源/测试/整套直播源/kk.txt
+https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u
+https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv6.txt
 https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv4.txt
+https://chuxinya.top/f/76vVIZ/流年直播源.txt
+# 私人节目单
+https://git.acwing.com/cisenyuan/kdsb/-/raw/main/txt/tvzb.txt
+http://lisha521.dynv6.net.fh4u.org/tv.txt
+http://lisha521.dynv6.net.fh4u.org/live.txt
+http://rihou.cc:555/gggg.nzk
+https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u
+https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/ipv4/result.m3u
+http://go8.work.gd/y5/i/?T=咪咕
+http://8.go8.work.gd//i/1748206208.txt
+http://go8.work.gd//i/?T=凤凰秒播
+https://web.banye.tech:7777/tv/hlj.txt
+http://gg.7749.org/z/i/view.txt
+https://github.com/alenin-zhang/IPTV/raw/main/lenin.txt
+https://github.com/alenin-zhang/IPTV/raw/main/lenin.txt
+https://github.com/250992941/iptv/raw/main/st1.txt
+https://github.com/250992941/iptv/raw/main/st2.txt
+https://github.com/250992941/iptv/raw/main/收集源.txt
+https://ghfast.top/https://raw.githubusercontent.com/250992941/iptv/refs/heads/main/st1.txt
+https://github.com/zht298/yingshi/raw/74980757585d89547240481350240284f06d6d8d/output/user_result.txt
+# 拾光｜影仓0312
+https://4708.kstore.space/svip/ITV.txt
+# 月光宝盒
+https://ygbh.site/bh.txt
+# NEW直播
+https://raw.githubusercontent.com/chuzjie/wuihui/main/小米/DSJ240101.txt
+# 七星itv
+https://gitlab.com/tvkj/loong/-/raw/main/loog.txt
+# 野火LIVE
+https://pastebin.com/raw/V0BhYHF4
+# 欧歌vjj
+https://欧歌vjj.u.nxog.top/m/tv/
+# 欧歌AI直播
+https://raw.githubusercontent.com/PizazzGY/TV/master/output/user_result.txt
+# 码点影仓
+http://mdxgh.tpddns.cn:9999/new/mdzb.txt
+# 易看电视
+http://117.72.68.25:9230/latest.txt
+# 海燕直播
+#https://chuxinya.top/f/AD5QHE/%E6%B5%B7%E7%87%95.txt
+# 拾光ITV
+https://4708.kstore.space/svip/ITV.txt
+# 小苹果，蜗牛线路[测试2]
+#http://wp.wadg.pro/down.php/d7b52d125998d00e2d2339bac6abd2b5.txt
+# 电视家9.0-2025
+http://8.138.7.223/2025.txt
+# 猫TV 同源 猫TV 肥猫 宝全影院272 ③猫TV线路(EXO)、④猫TV线路(IJK)  乘风TV-1.0.0-002
+http://dd.rihou.cc:555/gggg.nzk
