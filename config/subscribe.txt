@@ -1,9 +1,20 @@
 # 这是订阅源列表，每行一个订阅地址
 # This is a list of subscription sources, with one subscription address per line
 
-https://raw.githubusercontent.com/Guovin/iptv-database/master/result.txt
-https://raw.githubusercontent.com/iptv-org/iptv/gh-pages/countries/cn.m3u
-https://raw.githubusercontent.com/iptv-org/iptv/master/streams/cn.m3u
-https://raw.githubusercontent.com/suxuang/myIPTV/main/ipv4.m3u
-https://raw.githubusercontent.com/kimwang1978/collect-tv-txt/main/others_output.txt
-https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv4.txt
+http://lisha521.dynv6.net.fh4u.org/tv.txt
+http://lisha521.dynv6.net.fh4u.org/live.txt
+http://rihou.cc:555/gggg.nzk
+https://ghfast.top/https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u
+https://ghfast.top/https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/ipv4/result.m3u
+http://go8.work.gd/y5/i/?T=咪咕
+http://8.go8.work.gd//i/1748206208.txt
+http://go8.work.gd//i/?T=凤凰秒播
+https://web.banye.tech:7777/tv/hlj.txt
+http://gg.7749.org/z/i/view.txt
+https://ghfast.top/https://github.com/alenin-zhang/IPTV/raw/main/lenin.txt
+https://ghfast.top/https://github.com/alenin-zhang/IPTV/raw/main/lenin.txt
+https://ghfast.top/https://github.com/250992941/iptv/raw/main/st1.txt
+https://ghfast.top/https://github.com/250992941/iptv/raw/main/st2.txt
+https://ghfast.top/https://github.com/250992941/iptv/raw/main/收集源.txt
+https://ghfast.top/https://ghfast.top/https://raw.githubusercontent.com/250992941/iptv/refs/heads/main/st1.txt
+https://ghfast.top/https://github.com/zht298/yingshi/raw/74980757585d89547240481350240284f06d6d8d/output/user_result.txt
