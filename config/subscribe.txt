@@ -6,9 +6,6 @@ http://lisha521.dynv6.net.fh4u.org/live.txt
 http://rihou.cc:555/gggg.nzk
 https://ghfast.top/https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u
 https://ghfast.top/https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/ipv4/result.m3u
-http://go8.work.gd/y5/i/?T=咪咕
-http://8.go8.work.gd//i/1748206208.txt
-http://go8.work.gd//i/?T=凤凰秒播
 https://web.banye.tech:7777/tv/hlj.txt
 http://gg.7749.org/z/i/view.txt
 https://ghfast.top/https://github.com/alenin-zhang/IPTV/raw/main/lenin.txt
@@ -18,3 +15,16 @@ https://ghfast.top/https://github.com/250992941/iptv/raw/main/st2.txt
 https://ghfast.top/https://github.com/250992941/iptv/raw/main/收集源.txt
 https://ghfast.top/https://ghfast.top/https://raw.githubusercontent.com/250992941/iptv/refs/heads/main/st1.txt
 https://ghfast.top/https://github.com/zht298/yingshi/raw/74980757585d89547240481350240284f06d6d8d/output/user_result.txt
+http://dd.rihou.cc:555/gggg.nzk
+http://ox.my.to/i/7172930.txt
+http://tv.html-5.me//i/0224200.txt
+http://tv.html-5.me//i/0051790.txt
+http://tv.html-5.me//i/9390107.txt
+http://iptv.4666888.xyz/FYTV.txt
+http://tv.html-5.me//i/8757920.txt
+https://fs-im-kefu.7moor-fs1.com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/6242c7fd662f1434/李根电视1.txt
+http://tv.html-5.me//i/9839478.txt
+全球TV（stream.freetv源）http://103.186.215.29:5212/f/Kkdco/jdzb2.0.txt
+https://files.3y1.xyz/static/sitemap/test_channels.txt
+http://tv.html-5.me//i/0830189.txt
+http://tv.html-5.me//i/0830576.txt
