@@ -2,7 +2,9 @@
 # 支持设置UA：https://xxx.com/subscribe.m3u UA="xxx"
 # This is a list of subscription sources, with one subscription address per line
 # Supports setting UA: https://xxx.com/subscribe.m3u UA="xxx"
-
+# https://t.freetv.fun/m3u/playlist.txt UA="OKhttp/1.31"
+# https://t.freetv.fun/m3u/malaysia.txt UA="OKhttp/1.31"
+# https://t.freetv.fun/m3u/taiwan.txt UA="OKhttp/1.31"
 # raw.githubusercontent.com/yuanzl77/IPTV/master/live.txt
 # https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u
 # https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv6.txt
