@@ -1,7 +1,4 @@
 央视频道,#genre#
-CETV-4,http://114.248.6.123:8888/rtp/239.3.1.56:4120
-CETV-4,http://8.153.110.51:3020/923287339
-CETV-4,http://w.yyjn.top:3000/923287339
 
 卫视频道,#genre#
 安多卫视,https://liveout.xntv.tv/a65jur/96iln2.m3u8
@@ -22,11 +19,6 @@ GAT频道,#genre#
 凤凰香港,http://api.kkhk.itv888.vip:8080/streams/mty4v56ud39/index.m3u8
 港台电视 31,http://cdn.163189.xyz/163189/rthk31
 港台电视 32,http://cdn.163189.xyz/163189/rthk32
-翡翠台,http://pull-vivek.speedws.com/live/aaajade.flv
-翡翠台,http://o11.163189.xyz/stream/tvb/fct/
-翡翠台,http://mytv.cdn.loc.cc/o12.php?id=fct
-翡翠台,http://mytv.cdn.loc.cc/o12.php?id=mzt
-翡翠台,http://api.kkhk.itv888.vip:8080/streams/91wc8xdtj8/index.m3u8
 TVB星河,http://o11.163189.xyz/stream/live/tvbxh/
 TVB星河,https://cdn10.163189.xyz/stream/163189/xinghe/
 TVB星河,http://r.jdshipin.com/sXuuD
@@ -186,10 +178,7 @@ CCTV4K,http://scdx.zubo.cc.cd:9977/rtp/239.94.0.20:5140
 西安戏剧影视,http://shx.sohu.blog/shxxa.php?id=4
 嘉峪关综合,http://play.kankanlive.com/live/1720583434627241.m3u8
 天祝综合,https://play.kankanlive.com/live/1656487214793905.m3u8
-永昌综合,http://play.kankanlive.com/live/1720408280309109.m3u8
 甘南综合,https://play.kankanlive.com/live/1711955176432990.m3u8
-白银综合,http://play.kankanlive.com/live/1720408089419110.m3u8
-白银综合,https://play.kankanlive.com/live/1720408089419110.m3u8
 四川文化旅游,http://scdx.zubo.cc.cd:9977/rtp/239.94.0.71:5140
 四川文化旅游,http://scdx.zubo.cc.cd:9977/rtp/239.94.1.11:5140
 
@@ -206,13 +195,8 @@ CCTV4K,http://scdx.zubo.cc.cd:9977/rtp/239.94.0.20:5140
 中国交通,http://144.0.57.58:7004/udp/239.21.1.115:5002
 中国交通,http://124.65.5.35:20000/rtp/239.3.1.188:8001
 中国交通,http://111.193.239.94:8888/rtp/239.3.1.188:8001
-中华特产,http://60.165.96.177:3005/959986618
-中华特产,http://110.240.249.151:1234/959986618
-中华特产,http://125.107.237.171:1234/959986618
-中华特产,http://8.153.110.51:3020/959986618
-中华特产,http://w.yyjn.top:3000/959986618
 
 咪视界,#genre#
 
 🕘️更新时间,#genre#
-2026-04-03 22:57:20,http://114.248.6.123:8888/rtp/239.3.1.56:4120
+2026-04-09 17:56:51,https://liveout.xntv.tv/a65jur/96iln2.m3u8
