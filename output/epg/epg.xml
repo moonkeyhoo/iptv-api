@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<tv date="20260710100415 +0800">
+<tv date="20260710105405 +0800">
 	<channel id="CCTV-1">
 		<display-name lang="zh">CCTV-1</display-name>
 	</channel>
@@ -7095,4 +7095,28 @@
 	<programme channel="广州综合" start="20260710234500 +0800" stop="20260710235900 +0800">
 		<title lang="zh">纪录片华堂焕彩</title>
 	</programme>
+	<channel id="汕头综合">
+		<display-name lang="zh">汕头综合</display-name>
+	</channel>
+	<channel id="广州影视">
+		<display-name lang="zh">广州影视</display-name>
+	</channel>
+	<channel id="江门侨乡生活">
+		<display-name lang="zh">江门侨乡生活</display-name>
+	</channel>
+	<channel id="佛山综合">
+		<display-name lang="zh">佛山综合</display-name>
+	</channel>
+	<channel id="茂名综合">
+		<display-name lang="zh">茂名综合</display-name>
+	</channel>
+	<channel id="江门综合">
+		<display-name lang="zh">江门综合</display-name>
+	</channel>
+	<channel id="广州竞赛">
+		<display-name lang="zh">广州竞赛</display-name>
+	</channel>
+	<channel id="茂名公共">
+		<display-name lang="zh">茂名公共</display-name>
+	</channel>
 </tv>
