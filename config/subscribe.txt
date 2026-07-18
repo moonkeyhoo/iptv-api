@@ -2,10 +2,6 @@
 # 支持设置UA：https://xxx.com/subscribe.m3u UA="xxx"
 # This is a list of subscription sources, with one subscription address per line
 # Supports setting UA: https://xxx.com/subscribe.m3u UA="xxx"
-http://82.156.243.185:54321/other.m3u
-https://wget.la/https://raw.githubusercontent.com/Jsnzkpg/Jsnzkpg/Jsnzkpg/Jsnzkpg1.m3u
-http://210.245.166.84:1299/live/live1.txt
-
 # https://itv.aptv.app/china-iptv/gdlt.m3u
 # http://go.work.gd/0/咪咕高清.txt
 # http://tv.tttttttttt.top/0/咪咕高清.txt
@@ -20,6 +16,10 @@ http://210.245.166.84:1299/live/live1.txt
 # https://wget.la/https://raw.githubusercontent.com/mursor1985/LIVE/refs/heads/main/yylunbo.m3u
 # https://dsj-1312694395.cos.ap-guangzhou.myqcloud.com/dsj10.1.txt
 # https://d.kstore.dev/download/11344/yunduan.txt
+http://82.156.243.185:54321/other.m3u
+http://210.245.166.84:1299/live/live1.txt
+
+# https://wget.la/https://raw.githubusercontent.com/Jsnzkpg/Jsnzkpg/Jsnzkpg/Jsnzkpg1.m3u
 
 [WHITELIST]
 # 以下是订阅源的白名单，白名单内的订阅源获取的接口将不会参与测速，始终保留至结果最前。
