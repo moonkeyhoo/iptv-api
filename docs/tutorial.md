@@ -23,10 +23,11 @@
 
 ## 工作流部署
 
-使用 GitHub Actions 部署并手动执行更新。
+使用 GitHub Actions 手动生成结果，通过 Fork 仓库自己的 GitHub Pages 提供播放器订阅，并为每次运行创建独立的 Release，供下载和保存结果文件。
 
 > [!IMPORTANT]
-> GitHub Actions 资源有限，工作流更新只能手动触发。如果需要频繁更新或定时执行，请使用其他方式部署。
+> GitHub Actions 资源有限，工作流只能手动触发。生成结果通过 Pages Artifact 和每次运行独立的预发布版发布，不会提交到 Git，也不会创建 `gh-pages` 分支。
+> 如果需要频繁更新或定时执行，请使用 Docker、命令行、GUI 或外部对象存储。
 
 ### 进入IPTV-API项目
 
@@ -43,6 +44,22 @@
 
 ![Fork详情](./images/fork-detail.png 'Fork详情')
 
+### 启用 GitHub Pages
+
+每个 Fork 都需要单独启用 Pages，该设置不会从上游仓库自动继承：
+
+1. 进入您 Fork 仓库的 `Settings`。
+2. 在左侧选择 `Pages`。
+3. 在 `Build and deployment` 中，将 `Source` 设置为 `GitHub Actions`。
+
+不需要创建 `gh-pages` 分支，也不要将 `output/` 提交到任何分支。工作流会把临时 Pages Artifact 直接部署到：
+
+```text
+https://您的GitHub用户名.github.io/仓库名/
+```
+
+如果没有先启用 Pages，工作流会在 `Configure GitHub Pages` 步骤失败。
+
 ### 更新源代码
 
 由于本项目将持续迭代优化，如果您想获取最新的更新内容，可进行如下操作
@@ -50,7 +67,7 @@
 > [!WARNING]
 > 如果您的目的是更新自己 Fork 的代码，请不要点击 `Contribute` 或 `Open pull request` 创建 PR。
 > 请进入您自己的仓库主页，使用 `Sync fork` → `Update branch`。
-> 如果出现同步冲突，请按照下方说明选择 `Discard commits`。
+> 如果出现同步冲突，请先备份 `user_*.ini`、自定义模板与数据源，再按照下方说明选择 `Discard commits`。
 > 只有想向主仓库贡献代码时，才需要创建 Pull Request。
 
 #### 1. Watch
@@ -113,10 +130,9 @@
 1. 创建文件
 2. 配置文件命名为`user_config.ini`
 3. 粘贴默认配置（创建`user_config.ini`时，仅填写想要修改的配置项即可，无需全部复制`config.ini`）
-4. 修改模板和结果文件配置以及CDN代理加速（推荐）：
+4. 修改模板和结果文件配置：
     - source_file = config/user_demo.txt
     - final_file = output/user_result.txt
-    - cdn_url = （前往`Govin`公众号回复`cdn`获取）
 5. 点击`Commit changes...`进行保存
 
 ![创建user_config.ini](./images/edit-user-config.png '创建user_config.ini')
@@ -192,7 +208,7 @@ https://example.com/sub2.m3u UA="Mozilla/5.0 xxx"
 
 ### 运行更新
 
-如果您的模板和配置修改没有问题的话，这时就可以配置`Actions`来实现自动更新
+如果您的模板和配置修改没有问题，可以通过 `Actions` 手动生成并发布结果。
 
 #### 1. 进入 Actions：
 
@@ -204,13 +220,13 @@ https://example.com/sub2.m3u UA="Mozilla/5.0 xxx"
 由于 Fork 的仓库 Actions 工作流是默认关闭的，需要您手动确认开启，点击红框中的按钮确认开启
 
 ![Actions工作流开启成功](./images/actions-home.png 'Actions工作流开启成功')
-开启成功后，可以看到目前是没有任何工作流在运行的，别急，下面开始运行您第一个更新工作流
+开启成功后，可以看到目前没有工作流在运行，下面开始第一次手动生成。
 
 #### 3. 运行更新工作流：
 
-##### （1）启用update schedule：
+##### （1）启用手动生成工作流：
 
-1. 点击`Workflows`分类下的`update schedule`
+1. 点击 `Workflows` 分类下的 `Generate playlist manually`
 2. 由于 Fork 的仓库工作流是默认关闭的，点击`Enable workflow`按钮确认开启
 
 ![开启Workflows更新](./images/workflows-btn.png '开启Workflows更新')
@@ -232,8 +248,7 @@ https://example.com/sub2.m3u UA="Mozilla/5.0 xxx"
 ![Workflow运行中](./images/workflow-running.png 'Workflow运行中')
 
 > [!NOTE]\
-> 由于运行时间取决于您的模板频道数量以及页数等配置，也很大程度取决于当前网络状况，请耐心等待，默认模板与配置一般需要15
-> 分钟左右。
+> 由于运行时间取决于模板频道数量、页数配置与网络状况，请耐心等待。测速可能需要 30 分钟至 1 小时；它在最长 5 小时的生成 job 中执行。Pages 的 10 分钟部署限制只作用于结果生成完成后的独立部署 job，不包含测速时间。
 
 ##### （4）Workflow 取消运行：
 
@@ -246,11 +261,25 @@ https://example.com/sub2.m3u UA="Mozilla/5.0 xxx"
 
 ![Workflow执行成功](./images/workflow-success.png 'Workflow执行成功')
 
-此时您可以访问文件链接，查看最新结果有没有同步即可：
-https://raw.githubusercontent.com/您的github用户名/仓库名称（对应上述Fork创建时的iptv-api）/master/output/user_result.txt
+此时可以在工作流页面的 Summary 查看 Pages 链接和 Release 下载地址。播放器请使用 Pages 链接：
 
-代理加速地址（推荐）：
-{cdn_url}/https://raw.githubusercontent.com/您的github用户名/仓库名称（对应上述Fork创建时的iptv-api）/master/output/user_result.txt
+```text
+https://您的GitHub用户名.github.io/仓库名/result.m3u
+https://您的GitHub用户名.github.io/仓库名/result.txt
+https://您的GitHub用户名.github.io/仓库名/epg.gz
+```
+
+每次运行都会创建并保留独立的预发布版，工作流 Summary 和 Pages 页面会提供本次 Release 的入口。Release 标题和标签时间来自 `config.ini` 的 `time_zone`；默认时区下的标题示例为 `Generated playlist · 2026-09-20 10:30:00 (Asia/Shanghai)`。由于存在重定向和下载响应头，建议用它下载和保存结果文件，不要作为播放器订阅地址。附件下载地址格式如下：
+
+```text
+https://github.com/您的GitHub用户名/仓库名/releases/download/playlist-20260920-103000-utc-plus-0800/result.m3u
+```
+
+`result.txt` 始终发布；`result.m3u` 和 `epg.gz` 仅在对应功能开启且成功生成时存在。M3U 内的 EPG 地址使用 Pages 链接。
+
+Pages 结果页中的“复制链接”始终复制播放器可使用的原始文件地址；“预览内容”通过站内预览页强制按 UTF-8 解码，避免浏览器直接打开 M3U 时因响应缺少字符集而显示乱码。`epg.gz` 是压缩文件，只提供原始文件入口。
+
+Release 和 Fork 跳转地址均从运行工作流的仓库信息生成：主仓库页面指向 `Guovin/iptv-api`，Fork 仓库页面指向该用户自己的 Fork；只有主仓库的测试提示提供返回主仓库 Fork 创建页的入口。
 
 ![用户名与仓库名称](./images/rep-info.png '用户名与仓库名称')
 
@@ -258,7 +287,20 @@ https://raw.githubusercontent.com/您的github用户名/仓库名称（对应上
 等播放器配置栏中即可使用~
 
 > [!NOTE]\
-> 如果您修改了模板或配置文件想立刻执行更新，可手动触发（2）中的`Run workflow`即可。
+> 1. 如果您修改了模板或配置文件，可再次手动触发 `Run workflow`。Pages 地址保持不变，每次运行会创建新的预发布版并保留历史附件及其下载量。
+> 2. `open_history` 在 Actions 中仅尝试从短期缓存恢复，缓存失效时会执行无历史的完整生成。
+> 3. `open_auto_disable_source` 对配置文件的修改不会提交回仓库；需要持久保存时请使用其他部署方式。
+> 4. Pages 使用临时 Artifact 部署，不会向 Git 写入生成结果；请勿自行改为提交 `gh-pages` 分支。
+> 5. 播放列表结果继续使用预发布版，避免占用正式版的 Latest 标识或干扰 GUI 正式版本发布与更新检查。
+
+### 从旧工作流迁移
+
+1. 备份 Fork 中的 `config/user_config.ini`、`user_*.txt`、自定义模板与数据源。
+2. 在 Actions 中禁用含 `schedule` 的旧工作流，不要再让它提交 `output/`。
+3. 通过 `Sync fork` → `Update branch` 同步新版；若必须使用 `Discard commits`，请先完成第 1 步。
+4. 在 `Settings → Pages` 中将发布源设置为 `GitHub Actions`。
+5. 手动运行 `Generate playlist manually`，确认 Pages 部署和本次运行对应的预发布版均已生成。
+6. 将播放器中的旧 raw 或 Release 链接替换为 Summary 中的 Pages 链接。旧 raw 链接只保留最后一次结果，不再更新。
 
 ## 命令行
 
@@ -478,6 +520,7 @@ services:
       PUBLIC_PORT: "${PORT:-80}" # 兼容旧配置，由 PORT 自动同步
       NGINX_HTTP_PORT: "8080" # 高级兼容项，通常不要修改
       CDN_URL: ""
+      # 仅用于获取订阅源和 EPG 数据，不用于媒体测速
       HTTP_PROXY: ""
 ```
 

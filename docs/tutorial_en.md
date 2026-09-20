@@ -24,11 +24,12 @@
 
 ## Workflow deployment
 
-Use GitHub Actions workflows to deploy and manually trigger the update endpoint.
+Use GitHub Actions to generate results manually, serve player subscriptions from the fork's own GitHub Pages site, and create a separate Release for every run to download and save result files.
 
 > [!IMPORTANT]
-> Because GitHub resources are limited, workflow updates can only be triggered manually.
-> If you need frequent updates or scheduled runs, please deploy using another method.
+> Because GitHub resources are limited, the workflow can only be triggered manually. Generated results are deployed
+> through a Pages artifact and a separate prerelease for every run. They are not committed to Git, and no `gh-pages`
+> branch is created. For frequent or scheduled runs, use Docker, the command line, the GUI, or external object storage.
 
 ### Enter the IPTV-API Project
 
@@ -47,6 +48,22 @@ Copy the source code of this repository to your personal account repository.
 
 ![Fork details](./images/fork-detail.png 'Fork details')
 
+### Enable GitHub Pages
+
+Pages must be enabled separately in every fork; this setting is not inherited from the upstream repository:
+
+1. Open `Settings` in your fork.
+2. Select `Pages` in the sidebar.
+3. Under `Build and deployment`, set `Source` to `GitHub Actions`.
+
+Do not create a `gh-pages` branch or commit `output/` to any branch. The workflow deploys a temporary Pages artifact directly to:
+
+```text
+https://your-github-username.github.io/repository-name/
+```
+
+If Pages is not enabled first, the workflow fails at `Configure GitHub Pages`.
+
 ### Update Source Code
 
 Since this project will continue to iterate and optimize, if you want to get the latest updates, you can do the
@@ -55,7 +72,8 @@ following:
 > [!WARNING]
 > If you only want to update your fork, do not click `Contribute` or `Open pull request` to create a PR.
 > Go to your own repository and use `Sync fork` → `Update branch`.
-> If a synchronization conflict occurs, use `Discard commits` as described below.
+> If a synchronization conflict occurs, back up `user_*.ini`, custom templates, and source files before using
+> `Discard commits` as described below.
 > Create a Pull Request only when you intentionally want to contribute code to the upstream repository.
 
 #### 1. Watch
@@ -126,10 +144,9 @@ Like editing templates, modify the runtime configuration.
 2. Name the configuration file `user_config.ini`.
 3. Paste the default configuration. When creating `user_config.ini`, enter only the configuration items you want to
    modify; you do not need to copy the entire `config.ini`.
-4. Modify the template and result file configuration and CDN proxy acceleration (recommended):
+4. Modify the template and result file configuration:
     - source_file = config/user_demo.txt
     - final_file = output/user_result.txt
-    - cdn_url = (go to the `Govin` public account and reply `cdn` to get it)
 5. Click `Commit changes...` to save.
 
 ![Create user_config.ini](./images/edit-user-config.png 'Create user_config.ini')
@@ -225,7 +242,7 @@ headers can only be written into the `.m3u` result; the `.txt` format cannot car
 
 ### Run Update
 
-If your template and configuration modifications are correct, you can configure `Actions` to achieve automatic updates.
+After updating your template and configuration, use `Actions` to generate and publish results manually.
 
 #### 1. Enter Actions:
 
@@ -237,14 +254,13 @@ If your template and configuration modifications are correct, you can configure 
 Since the Actions workflow of the forked repository is disabled by default, you need to manually confirm to enable it,
 click the button in the red box to confirm enabling.
 ![Actions workflow enabled successfully](./images/actions-home.png 'Actions workflow enabled successfully')
-After enabling successfully, you can see that there are no workflows running currently, don't worry, let's start running
-your first update workflow below.
+After enabling Actions, start your first manual generation below.
 
 #### 3. Run the update workflow:
 
-##### (1) Enable update schedule:
+##### (1) Enable the manual generation workflow:
 
-1. Click `update schedule` under the `Workflows` category.
+1. Click `Generate playlist manually` under the `Workflows` category.
 2. Since the workflow of the forked repository is disabled by default, click the `Enable workflow` button to confirm the
    activation.
 
@@ -265,9 +281,9 @@ Now you can run the update workflow.
 
 Wait a moment, and you will see that your first update workflow is running!
 > [!NOTE]\
-> The running time depends on the number of channels and pages in your template and other configurations, and also
-> largely depends on the current network conditions. Please be patient. The default template and configuration usually
-> take about 15 minutes.
+> Runtime depends on the template size, page settings, and network conditions. Speed testing may take 30–60 minutes and
+> runs in a generation job with a five-hour timeout. The ten-minute Pages deployment limit applies only to the separate
+> deployment job after generation completes; it does not include speed-testing time.
 
 ![Workflow in progress](./images/workflow-running.png 'Workflow in progress')
 
@@ -283,11 +299,25 @@ If everything is normal, after a short wait, you will see that the workflow has 
 mark).
 ![Workflow executed successfully](./images/workflow-success.png 'Workflow executed successfully')
 
-At this point, you can visit the file link to see if the latest results have been synchronized:
-https://raw.githubusercontent.com/your-github-username/repository-name/master/output/user_result.txt
+The workflow summary contains Pages links and Release download URLs. Players should use the Pages links:
 
-Recommended CDN-accelerated URL:
-{cdn_url}/https://raw.githubusercontent.com/your-github-username/repository-name/master/output/user_result.txt
+```text
+https://your-github-username.github.io/repository-name/result.m3u
+https://your-github-username.github.io/repository-name/result.txt
+https://your-github-username.github.io/repository-name/epg.gz
+```
+
+Every run creates and retains a separate prerelease. The workflow summary and Pages site link to the Release for the current run. Release titles and tags use the `time_zone` configured in `config.ini`; with the default setting, an example title is `Generated playlist · 2026-09-20 10:30:00 (Asia/Shanghai)`. Because Release assets use redirects and download-oriented response headers, use them to download and save result files instead of as player subscription URLs. Asset URLs use this format:
+
+```text
+https://github.com/your-github-username/repository-name/releases/download/playlist-20260920-103000-utc-plus-0800/result.m3u
+```
+
+`result.txt` is always published. `result.m3u` and `epg.gz` exist only when their features are enabled and generation succeeds. The M3U uses the Pages link for EPG.
+
+On the Pages results page, “Copy” always copies the original file URL for players. “Preview” opens an in-site viewer that explicitly decodes UTF-8, avoiding mojibake when a browser opens M3U responses without a charset. Because `epg.gz` is compressed, it only provides the original file action.
+
+Release and Fork destinations are generated from the repository running the workflow. The upstream site points to `Guovin/iptv-api`, while a fork's site points to that user's own fork. Only the upstream test notice links to the upstream repository's Fork creation page.
 
 ![Username and Repository Name](./images/rep-info.png 'Username and Repository Name')
 
@@ -295,8 +325,22 @@ If you can access this link and it returns the updated interface content, then y
 successfully created! Simply copy and paste this link into software like `TVBox` in the configuration field to use~
 
 > [!NOTE]\
-> If you have modified the template or configuration files and want to execute the update immediately, you can manually
-> trigger (2)`Run workflow`.
+> 1. Run `Run workflow` again after changing templates or configuration. The Pages URLs remain unchanged, while each run creates a new prerelease and retains historical assets and download counts.
+> 2. In Actions, `open_history` only attempts to restore short-lived cached state. A full run without history is used
+>    when that cache has expired.
+> 3. Changes made by `open_auto_disable_source` are not committed. Use another deployment method when those changes
+>    must persist.
+> 4. Pages is deployed from a temporary artifact and does not write generated results to Git. Do not change it to commit a `gh-pages` branch.
+> 5. Playlist snapshots remain prereleases so they do not take the Latest label or interfere with stable GUI releases and update checks.
+
+### Migrate from the legacy workflow
+
+1. Back up `config/user_config.ini`, `user_*.txt`, custom templates, and source files from your fork.
+2. Disable any old workflow containing `schedule`; do not allow it to commit `output/` again.
+3. Use `Sync fork` → `Update branch`. Complete step 1 before using `Discard commits` if conflicts require it.
+4. Under `Settings → Pages`, set the publishing source to `GitHub Actions`.
+5. Run `Generate playlist manually` and confirm both the Pages deployment and the prerelease for that run were created.
+6. Replace legacy raw or Release URLs in players with the Pages link from the summary. The old raw URL retains only its last result and no longer updates.
 
 ## Command Line
 
@@ -520,6 +564,7 @@ services:
       PUBLIC_PORT: "${PORT:-80}" # Legacy compatibility value synchronized from PORT
       NGINX_HTTP_PORT: "8080" # Advanced compatibility setting; normally do not change
       CDN_URL: ""
+      # Used only for subscription sources and EPG data, not media speed tests
       HTTP_PROXY: ""
 ```
 
