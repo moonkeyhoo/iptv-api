@@ -2,11 +2,42 @@
 # 支持设置UA：https://xxx.com/subscribe.m3u UA="xxx"
 # This is a list of subscription sources, with one subscription address per line
 # Supports setting UA: https://xxx.com/subscribe.m3u UA="xxx"
+# http://nn.7x9d.cn/xz/xz_f681eacf7a/fjgd.php
+# http://nn.7x9d.cn/xz/xz_f681eacf7a/bst.php
+# http://nn.7x9d.cn/xz/xz_f681eacf7a/zgstku9.php
+# gh-proxy.org/https://raw.githubusercontent.com/jn950/live/main/tv/holive.m3u
+# https://zu.0186.ccwu.cc/abc123
+# http://192.168.1.205:1122/m3u
+# https://gh-proxy.com/https://raw.githubusercontent.com/xmbjm/Collect-IPTV/refs/heads/main/best_sorted.m3u8
+# https://mg.0186.ccwu.cc/dashengruoyu
+# http://192.168.1.205:1905/interface.m3u
+# http://192.168.1.205:8999/?out=shaanxi.m3u
 
 
-
-
+# https://gh-proxy.com/raw.githubusercontent.com/vbskycn/iptv/refs/heads/master/tv/iptv4.m3u
+# https://raw.githubusercontent.com/iptv-org/iptv/refs/heads/master/streams/cn.m3u
+# https://raw.githubusercontent.com/iptv-org/iptv/refs/heads/master/streams/tw.m3u
+# https://raw.githubusercontent.com/kimwang1978/collect-txt/refs/heads/main/work/%E5%A4%AE%E8%A7%86.txt
+# https://raw.githubusercontent.com/kimwang1978/collect-txt/refs/heads/main/bbxx365.m3u
+# https://raw.githubusercontent.com/iptv-org/iptv/refs/heads/master/streams/cn.m3u
+# https://raw.githubusercontent.com/Free-TV/IPTV/refs/heads/master/playlists/playlist_china.m3u8
+# https://moonkeyhoo.github.io/iptv-api/result.txt
 
 [WHITELIST]
-# 以下是订阅源的白名单，白名单内的订阅源获取的接口将不会参与测速，始终保留至结果最前。
-# This is the whitelist for subscription sources. Subscription sources in the whitelist will not participate in speed testing and will always be retained at the front of the results.
+以下是订阅源的白名单，白名单内的订阅源获取的接口将不会参与测速，始终保留至结果最前。
+This is the whitelist for subscription sources. Subscription sources in the whitelist will not participate in speed testing and will always be retained at the front of the results.https://gh-proxy.com/https://raw.githubusercontent.com/moonkeyhoo/IPTV2/refs/heads/main/live.m3u
+https://raw.githubusercontent.com/moonkeyhoo/IPTV2/refs/heads/main/live.m3u
+https://raw.githubusercontent.com/moonkeyhoo/IPTV/refs/heads/main/iptv.txt
+https://raw.githubusercontent.com/moonkeyhoo/IPTV/refs/heads/main/ipv4.txt
+https://raw.githubusercontent.com/moonkeyhoo/collect-txt/refs/heads/main/bbxx365.m3u
+https://gh-proxy.org/https://github.com/jia070310/lemonTV/blob/main/iptv-fe.m3u
+http://iptv.cqshushu.com/jiekou.php?jk=m3u&token=f42b2c564cdadc7fa96d001ab98c51c2
+https://gh-proxy.com/https://raw.githubusercontent.com/xmbjm/Collect-IPTV/refs/heads/main/best_sorted.m3u8
+https://mg.0186.ccwu.cc/dashengruoyu
+https://gh-proxy.com/raw.githubusercontent.com/vbskycn/iptv/refs/heads/master/tv/iptv4.m3u
+https://raw.githubusercontent.com/iptv-org/iptv/refs/heads/master/streams/cn.m3u
+https://raw.githubusercontent.com/iptv-org/iptv/refs/heads/master/streams/tw.m3u
+https://raw.githubusercontent.com/kimwang1978/collect-txt/refs/heads/main/work/%E5%A4%AE%E8%A7%86.txt
+https://raw.githubusercontent.com/kimwang1978/collect-txt/refs/heads/main/bbxx365.m3u
+https://raw.githubusercontent.com/iptv-org/iptv/refs/heads/master/streams/cn.m3u
+https://raw.githubusercontent.com/Free-TV/IPTV/refs/heads/master/playlists/playlist_china.m3u8
